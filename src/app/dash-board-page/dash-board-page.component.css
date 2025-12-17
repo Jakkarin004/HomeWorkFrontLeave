@@ -1,0 +1,56 @@
+.text-coler-yellow {
+
+    background-color: #fff3cd;
+    color: rgb(166, 166, 5);
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 500;
+    width: 70px;
+}
+
+.text-coler-green {
+    /* background-color: rgb(19, 160, 33); */
+
+    background-color: #a1ecae;
+    color: green;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 500;
+    width: 80px;
+}
+
+.text-coler-red {
+    /* background-color: rgb(19, 160, 33); */
+
+    background-color: #f3c0c0;
+    color: red;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 500;
+    width: 55px;
+}
+
+.leaveAll-num {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid rgb(129, 128, 128);
+    border-radius: 10px;
+    margin: 1.2rem auto;
+    padding: 0.5rem;
+}
+
+.leaveAll-num .mat-icon {
+    font-size: 40px;
+    width: 50px;
+    height: 50px;
+}
+
+.table-b {
+    border-radius: 10px;
+    overflow: hidden;
+}

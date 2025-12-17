@@ -1,0 +1,30 @@
+/* .body{
+    background-color: rgb(197, 195, 195);
+} */
+
+
+.header-mian{
+    border: 1px solid rgb(143, 141, 141);
+    display: flex;
+    justify-content: left;
+    background-color: white;
+}
+
+
+.tab-body{
+    display: flex;
+    border: 1px solid rgb(125, 123, 123);
+    margin: 1rem auto;
+    width: 95%;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.tab-content{
+    /* margin-top: 1rem; */
+    margin: 1rem auto;
+    display: block;
+    width: 95%;
+    background-color: white;
+    /* border: 1px solid red; */
+}

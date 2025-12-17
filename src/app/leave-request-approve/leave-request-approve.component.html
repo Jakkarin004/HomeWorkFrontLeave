@@ -1,0 +1,43 @@
+<div class="leave-approval-list">
+  <div class="leave-card" *ngFor="let data of dataReList">
+    <div class="leave-header">
+      <div class="user-info">
+        <h3>{{ data.username }}</h3>
+        <p>{{ data.department }}</p>
+      </div>
+      <span class="status-badge">รออนุมัติ</span>
+    </div>
+
+    <div class="leave-body">
+      <div class="leave-row">
+        <p>ประเภทการลา</p>
+        <p>{{ data.name }}</p>
+      </div>
+      <div class="leave-row">
+        <p>จำนวนวัน</p>
+        <p>{{ data.startDate | numDay:data.endDate }} วัน</p>
+      </div>
+      <div class="leave-row">
+        <p>วันที่เริ่มต้น</p>
+        <p>{{ data.startDate }}</p>
+      </div>
+      <div class="leave-row">
+        <p>วันที่สิ้นสุด</p>
+        <p>{{ data.endDate }}</p>
+      </div>
+      <div class="leave-row">
+        <p>เหตุผลการลา</p>
+        <p>{{ data.reason }}</p>
+      </div>
+
+      <div class="leave-comment">
+        <textarea placeholder="เพิ่มความคิดเห็น (ถ้ามี)" [(ngModel)]="comment"></textarea>
+      </div>
+    </div>
+
+    <div class="leave-footer">
+      <button class="btn reject" (click)="cancle(data.id)">ไม่อนุมัติ</button>
+      <button class="btn approve" (click)="access(data.id)">อนุมัติ</button>
+    </div>
+  </div>
+</div>

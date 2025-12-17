@@ -1,0 +1,37 @@
+<div class="body">
+    <div class="header-mian">
+        <div class="header-content">
+            <h2>ระบบลางาน</h2>
+        </div>
+    </div>
+    <nav mat-tab-nav-bar [tabPanel]="tabPanel" class="tab-body">
+        <a mat-tab-link *ngFor="let p of page; trackBy : trackByLink" (click)="acTive = p.id"
+            [active]="acTive === p.id">
+            {{p.pageName}}
+        </a>
+    </nav>
+
+    <mat-tab-nav-panel #tabPanel class="tab-content">
+        <div class="page-full" *ngIf="acTive === 1">
+            <app-dash-board-page></app-dash-board-page>
+        </div>
+        <div class="page-full" *ngIf="acTive === 2">
+            <app-leave-request-form></app-leave-request-form>
+        </div>
+        <div class="page-full" *ngIf="acTive === 3">
+            <app-leave-history></app-leave-history>
+        </div>
+        <div class="page-full" *ngIf="acTive === 4  ">
+            <app-leave-request-approve></app-leave-request-approve>
+        </div>
+        <div class="page-full" *ngIf="acTive === 5">
+            <app-statistics-page></app-statistics-page>
+        </div>
+        <div class="page-full" *ngIf="acTive === 6">
+            gg6
+        </div>
+    </mat-tab-nav-panel>
+</div>
+<!-- 
+<div class="" class="page-full" *ngIf="acTive === 3">ffll</div>
+<div class="" class="page-full" *ngIf="acTive === 4">hhgg</div> -->

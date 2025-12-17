@@ -1,0 +1,63 @@
+<div class="leaveAll-num">
+            <div class=""><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+            </div>
+            <div class="">
+                <small>วันลาคงเหลือ</small>
+                <h2> {{totalDay}} วัน</h2>
+            </div>
+        </div>
+        <div class="leaveAll-num">
+            <div class=""><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+            </div>
+            <div class="">
+                <small>ลาที่รออนุมัติ</small>
+                <h2> {{pendingCount}} วัน</h2>
+            </div>
+        </div>
+        <div class="leaveAll-num">
+            <div class=""><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+            </div>
+            <div class="">
+                <small>ลาทั้งหมดปีนี้</small>
+                <h2> {{dayUse}} วัน</h2>
+            </div>
+        </div>
+        <div class="">
+            <!-- มันแยกกันอย่างชัดเจน -->
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table-b">
+
+                <!-- ตัวนี้เป็นคอลัม  -->
+                <ng-container matColumnDef="date">
+                    <th mat-header-cell *matHeaderCellDef>วันที่ลา</th>
+                    <td mat-cell *matCellDef="let data">
+                        {{ data.startDate | startEndDate:data.endDate }}
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="type">
+                    <th mat-header-cell *matHeaderCellDef>ประเภท</th>
+                    <td mat-cell *matCellDef="let data">{{ data.name }}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="day">
+                    <th mat-header-cell *matHeaderCellDef>จำนวนวัน</th>
+                    <td mat-cell *matCellDef="let data">
+                        {{ data.startDate | numDay:data.endDate }} วัน
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="status">
+                    <th mat-header-cell *matHeaderCellDef>สถานะ</th>
+                    <td mat-cell *matCellDef="let data">
+                        <p class="text-coler-yellow" *ngIf="data.status === 'pending'">รออนุมัติ</p>
+                        <p class="text-coler-green" *ngIf="data.status === 'approved'">อนุมัติแล้ว</p>
+                        <p class="text-coler-red" *ngIf="data.status === 'cancle'">ยกเลิก</p>
+                    </td>
+                </ng-container>
+
+                <!-- ตัวนี้หัว -->
+                <tr mat-header-row *matHeaderRowDef="dataName"></tr>
+                <!-- อันนี้ data -->
+                <tr mat-row *matRowDef="let data; columns: dataName;"></tr>
+            </table>
+        </div>
